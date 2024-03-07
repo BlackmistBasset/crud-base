@@ -1,0 +1,176 @@
+/* - - - - - - - - - - -' * ⚝ 。• ‧ -FUENTES- ‧ • 。⚝ * '- - - - - - - - - - - */
+
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"); /* font-family: 'Patrick Hand', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap"); /* font-family: 'Neucha', cursive; */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Neucha", cursive;
+  background-color: #0f1f35;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+/* - - - - - - - - - - -' * ⚝ 。• ‧ -CONTENEDORES SECUNDARIOS- ‧ • 。⚝ * '- - - - - - - - - - - */
+
+.ventas {
+  background-color: #ebecd8;
+  width: 70%;
+  border: 2px solid #80d39b;
+  border-radius: 0.938em;
+  margin: 100px auto 0px;
+  justify-content: space-between;
+  padding-bottom: 0.938em;
+}
+
+.nueva-categoria,
+.editar-categoria {
+  background-color: #ebecd8;
+  border: 2px solid #80d39b;
+  border-radius: 0.938em;
+  margin: 20px auto;
+  width: 70%;
+}
+
+.modal_contenido {
+  padding: 20px;
+}
+
+.modal_contenido form {
+  display: flex;
+  gap: 30px;
+}
+.modal_contenido input {
+  padding: 4px 8px;
+  width: 90%;
+  border-radius: 4px;
+  border: 1px solid #80d39b;
+}
+
+/* - - - - - - - - - - -' * ⚝ 。• ‧ -ESTRUCTURA CONTENEDORES- ‧ • 。⚝ * '- - - - - - - - - - - */
+
+.encabezado {
+  width: 100%;
+  height: 3.125em;
+  background-color: #816f5c;
+  border-radius: 0.938em 0.938em 0em 0em;
+  display: flex;
+  align-items: center;
+}
+
+.titulo-encabezado {
+  font-size: 1.563em;
+  letter-spacing: 0.094em;
+  color: #80d39b;
+  padding-left: 0.625em;
+  font-weight: bold;
+}
+
+.contenido {
+  height: 100%;
+  padding: 0.313em 0em 0em 0.625em;
+  overflow: auto;
+}
+
+.enunciado-fijo {
+  font-size: 1.375em;
+  color: #0f3d7c;
+  font-family: "Patrick Hand", cursive;
+  font-weight: bold;
+  margin-top: 0.625em;
+}
+
+.ventas .encabezado {
+  justify-content: space-between;
+}
+
+.ventas .contenido,
+.estadisticas-ventas .contenido {
+  padding-left: 0px;
+}
+
+span {
+  font-weight: lighter;
+}
+
+.ventas .contenido {
+  height: 19.2em;
+}
+
+/* - - - - - - - - - - -' * ⚝ 。• ‧ -TABLAS- ‧ • 。⚝ * '- - - - - - - - - - - */
+
+.boton-general {
+  color: #ebecd8;
+  padding: 4px 8px;
+  margin-right: 1.25em;
+  border-radius: 0.625em;
+  background-color: #09254b;
+  font-family: "Patrick Hand", cursive;
+  border: 1px solid #80d39b;
+  font-size: 1.125em;
+  cursor: pointer;
+}
+
+.boton-general:hover {
+  background-color: green;
+}
+
+table {
+  width: 95%;
+  margin: auto;
+  margin-bottom: 0.313em;
+  border-collapse: collapse;
+  color: #0f3d7c;
+}
+
+td {
+  border-bottom: 2px solid #816f5c;
+  height: 2.5em;
+  font-weight: bold;
+  padding-left: 0.625em;
+}
+
+th {
+  text-align: left;
+  border-bottom: 3px solid #816f5c;
+  height: 2.25em;
+  font-size: 1.25em;
+}
+
+.tabla-id {
+  width: 300px;
+}
+
+.tabla-categoria {
+  width: auto;
+}
+
+.tabla-acciones {
+  width: 100px;
+}
+
+.iconos-edit {
+  text-align: center;
+}
+
+.fa-trash-alt {
+  font-size: 1.25em;
+  color: darkred;
+  cursor: pointer;
+}
+
+.fa-edit {
+  font-size: 1.25em;
+  color: green;
+  cursor: pointer;
+}

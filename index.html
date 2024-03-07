@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Administrador de Ventas</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images/favicon.JPG" />
+    <link href="styles.css" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/a583c7a465.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+  </head>
+
+  <body>
+    <script src="data.js"></script>
+
+    <div class="ventas">
+      <div class="encabezado">
+        <h2 class="titulo-encabezado">Categorías</h2>
+        <button class="boton-general positivo" id="crear-nueva-categoria">
+          Nueva Categoria
+        </button>
+      </div>
+      <div class="contenido">
+        <table>
+          <thead>
+            <th class="tabla-id">Id</th>
+            <th class="tabla-categoria">Categoria</th>
+
+            <th class="tabla-acciones">Acciones</th>
+          </thead>
+          <tbody id="tabla-categorias"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="nueva-categoria hidden" id="nueva-categoria">
+      <div class="encabezado">
+        <h2 class="titulo-encabezado">Nueva Categoria</h2>
+      </div>
+      <div class="modal_contenido">
+        <form action="">
+          <input type="text" id="nueva_categoria_input" />
+          <button id="cargar_nueva_categoria" class="boton-general">
+            Cargar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="editar-categoria hidden">
+      <div class="encabezado">
+        <h2 class="titulo-encabezado">Editar Categoria</h2>
+      </div>
+      <div class="modal_contenido">
+        <form action="">
+          <input type="text" id="editar_categoria" />
+          <button class="boton-general cargar_categoria">Cargar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

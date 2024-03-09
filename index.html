@@ -20,7 +20,7 @@
 
     <div class="ventas">
       <div class="encabezado">
-        <h2 class="titulo-encabezado">Categorías</h2>
+        <h2 class="titulo-encabezado">Operaciones</h2>
         <button class="boton-general positivo" id="crear-nueva-categoria">
           Nueva Categoria
         </button>
@@ -28,13 +28,29 @@
       <div class="contenido">
         <table>
           <thead>
-            <th class="tabla-id">Id</th>
+            <th class="tabla-id">Tipo</th>
             <th class="tabla-categoria">Categoria</th>
 
             <th class="tabla-acciones">Acciones</th>
           </thead>
           <tbody id="tabla-categorias"></tbody>
         </table>
+      </div>
+    </div>
+
+    <div class="nueva-categoria">
+      <div class="encabezado">
+        <h2 class="titulo-encabezado">Filtrar por tipo</h2>
+      </div>
+      <div class="modal_contenido">
+        <form action="">
+          <select name="tipo" id="select-filtro-tipo">
+            <option value="">Todas</option>
+            <option value="gasto">Gasto</option>
+            <option value="ganancia">Ganancia</option>
+          </select>
+          <button id="filtrar-por-tipo" class="boton-general">Filtrar</button>
+        </form>
       </div>
     </div>
 
@@ -45,9 +61,9 @@
       <div class="modal_contenido">
         <form action="">
           <input type="text" id="nueva_categoria_input" />
-          <button id="cargar_nueva_categoria" class="boton-general">
+          <!-- <button id="cargar_nueva_categoria" class="boton-general">
             Cargar
-          </button>
+          </button> -->
         </form>
       </div>
     </div>

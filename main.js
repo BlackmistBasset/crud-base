@@ -36,26 +36,26 @@ const eventosEliminarCategoria = (selectorAll) => {
 const cargarTabla = (data) => {
   tableBody.innerHTML = "";
   data.forEach((categoria) => {
-    const { id, nombre } = categoria;
+    const { descripcion, tipo } = categoria;
     tableBody.innerHTML += `
         <tr>
-            <td>${id}</td>
-            <td>${nombre}</td>
+            <td>${tipo}</td>
+            <td>${descripcion}</td>
             <td>
-            <i class="far fa-edit boton-editar" id="editar-${id}"></i>
+            <i class="far fa-edit boton-editar" id="editar-"></i>
             <i
                 class="far fa-trash-alt boton-eliminar"
-                id="eliminar-${id}"
+                id="eliminar-"
             ></i>
             </td>
         </tr>`;
   });
 
-  eventosEditarCategoria(document.querySelectorAll(".boton-editar"));
-  eventosEliminarCategoria(document.querySelectorAll(".boton-eliminar"));
+  // eventosEditarCategoria(document.querySelectorAll(".boton-editar"));
+  // eventosEliminarCategoria(document.querySelectorAll(".boton-eliminar"));
 };
 
-cargarTabla(categorias);
+cargarTabla(operaciones);
 
 //Identificar categoría en función del id
 
@@ -90,24 +90,23 @@ const nuevaCategoria = document.getElementById("crear-nueva-categoria");
 const cargarNuevaCategoria = document.getElementById("cargar_nueva_categoria");
 const nuevaCategoriaInput = document.getElementById("nueva_categoria_input");
 
-console.log(cargarNuevaCategoria);
 nuevaCategoria.addEventListener("click", () => {
   nuevaCategoriaContenedor.classList.remove("hidden");
   editarModal.classList.add("hidden");
 });
 
-cargarNuevaCategoria.addEventListener("click", (e) => {
-  e.preventDefault();
-  const nuevaCategoriaObj = {
-    id: uuidv4(),
-    nombre: nuevaCategoriaInput.value,
-  };
+// cargarNuevaCategoria.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const nuevaCategoriaObj = {
+//     id: uuidv4(),
+//     nombre: nuevaCategoriaInput.value,
+//   };
 
-  const nuevoArray = [...categorias, nuevaCategoriaObj];
-  categorias = nuevoArray;
-  nuevaCategoriaContenedor.classList.add("hidden");
-  cargarTabla(categorias);
-});
+//   const nuevoArray = [...categorias, nuevaCategoriaObj];
+//   categorias = nuevoArray;
+//   nuevaCategoriaContenedor.classList.add("hidden");
+//   cargarTabla(categorias);
+// });
 
 //Eliminar categoría
 const confirmarEliminarCategoria = (array, categoriaId) => {
@@ -118,3 +117,65 @@ const confirmarEliminarCategoria = (array, categoriaId) => {
 
   cargarTabla(categorias);
 };
+
+//METODO SORT
+const numeritos = [1, 23, 18, 34, 13, 100];
+const palabritas = ["perro", "jirafa", "vaca", "gato", "arbol"];
+
+console.log(numeritos.sort());
+
+const numeritosOrdenados = numeritos.sort((a, b) => {
+  return b - a;
+});
+
+// const operacionesOrdenadas = [...operaciones].sort((a, b) => {
+//   return b.descripcion - a.descripcion;
+// });
+
+const operacionesOrdenadas = [...operaciones].sort((a, b) => {
+  console.log(a.descripcion, b.descripcion);
+  b.descripcion.localeCompare(a.descripcion);
+});
+console.log("operaciones solo", operaciones);
+
+// console.log("ordenadas antes del push:", operacionesOrdenadas);
+// console.log(operacionesOrdenadas[12]);
+// operacionesOrdenadas.push({ nombre: "test" });
+console.log("ordenadas filtradas", operacionesOrdenadas);
+//console.log(operacionesOrdenadas[12]);
+
+// FILTRAR POR TIPO
+const selectTipoFiltro = document.getElementById("select-filtro-tipo");
+
+const filtrarOperaciones = (tipoOperacion) => {
+  console.log(tipoOperacion);
+  const operacionesFiltradas = operaciones.filter(
+    (operacion) => operacion.tipo.toLowerCase() === tipoOperacion
+  );
+
+  cargarTabla(operacionesFiltradas);
+};
+
+selectTipoFiltro.addEventListener("change", (e) => {
+  filtrarOperaciones(e.target.value);
+});
+
+cargarTabla(operacionesOrdenadas);
+
+const prueba = [
+  "Compra en el super",
+  "Verduras av 28",
+  "Carne en a.t",
+  "Sueldo enero",
+];
+
+console.log(prueba.sort());
+
+const $ = (query) => document.querySelector(query);
+const $$ = (query) => document.querySelectorAll(query);
+
+const btn = $("#crear-nueva-categoria");
+
+console.log(btn);
+
+$("#crear-nueva-categoria").innerText = "Cambie el texto";
